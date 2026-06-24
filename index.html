@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Car Shop NNY | いい車を、もっと安心できる価格で。</title>
+<meta name="description" content="Car Shop NNY（札幌）— 中古車販売・車検・整備・コーティング。地域密着の小型店舗だからできる価格と、売って終わりにしない購入後サポート。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;700;800&family=Noto+Sans+JP:wght@400;500;600;700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ===================================================
+   Car Shop NNY — Landing Page v3 (Photo-driven)
+   Concept: ネイビー×白、写真を主役にした構成
+   =================================================== */
+
+:root {
+  --navy: #0B1E3D;
+  --navy-mid: #16315C;
+  --navy-soft: #2E5C8A;
+  --white: #FFFFFF;
+  --paper: #F7F8FA;
+  --paper-deep: #EEF1F5;
+  --ink-soft: #5A6B82;
+  --accent: #16315C;
+  --gold: #9C7A3C;
+  --gold-bright: #C9A876;
+  --line: #E2E6EC;
+
+  --font-display: "Shippori Mincho B1", "Noto Serif JP", serif;
+  --font-body: "Noto Sans JP", sans-serif;
+  --font-num: "Roboto Condensed", "Noto Sans JP", sans-serif;
+
+  --container: 1120px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--white);
+  color: var(--navy);
+  font-family: var(--font-body);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+.wrap { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--navy-soft);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+section { padding: 80px 0; position: relative; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-num); font-size: 12px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--navy-soft); margin-bottom: 16px;
+}
+.eyebrow::before { content: ""; width: 22px; height: 1px; background: var(--accent); display: inline-block; }
+
+.section-title {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(26px, 4vw, 38px);
+  color: var(--navy); margin-bottom: 12px; line-height: 1.5;
+}
+.section-lede { color: var(--ink-soft); font-size: 15px; max-width: 560px; margin-bottom: 40px; }
+
+/* =========================================
+   Header
+   ========================================= */
+.site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(255, 255, 255, 0.88); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.logo {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 19px; letter-spacing: 0.06em; color: var(--navy);
+  display: flex; align-items: center; width: fit-content;
+}
+.logo .logo-name { white-space: nowrap; }
+.logo .nny { color: var(--gold-bright); }
+.header-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 600; letter-spacing: 0.03em;
+  padding: 9px 18px; color: var(--white);
+  background: linear-gradient(45deg, #FEDA75 0%, #FA7E1E 25%, #D62976 50%, #962FBF 75%, #4F5BD5 100%);
+  border-radius: 100px; transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(214, 41, 118, 0.28);
+}
+.header-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(214, 41, 118, 0.4); }
+.header-cta svg { width: 16px; height: 16px; flex-shrink: 0; }
+.header-cta .short { display: none; }
+
+/* =========================================
+   Hero — full bleed photo, text overlay bottom-left
+   ========================================= */
+.hero {
+  position: relative; min-height: 100vh; display: flex; flex-direction: column;
+  padding-top: 72px; overflow: hidden; background: var(--white);
+}
+.hero-bg { position: relative; width: 100%; height: 58vh; min-height: 380px; overflow: hidden; flex-shrink: 0; }
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 45%; display: block; }
+.hero-bg::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 70%, var(--white) 100%);
+}
+.hero-content { position: relative; z-index: 2; width: 100%; padding: 36px 0 64px; color: var(--navy); flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.hero-eyebrow {
+  font-family: var(--font-display); font-weight: 700; font-size: 18px; letter-spacing: 0.06em;
+  color: var(--navy); margin-bottom: 22px;
+}
+.hero-title {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(34px, 5.6vw, 54px); line-height: 1.4;
+  letter-spacing: 0.02em; color: var(--navy); margin-bottom: 22px;
+}
+.hero-rule { width: 36px; height: 2px; background: var(--navy); margin-bottom: 22px; }
+.hero-tags {
+  display: flex; flex-direction: column; max-width: 440px; margin-bottom: 34px;
+}
+.hero-tags span {
+  font-size: 14px; color: var(--navy-mid);
+  padding: 11px 0; border-bottom: 1px solid var(--line);
+}
+.hero-tags span:first-child { border-top: 1px solid var(--line); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 30px; border-radius: 100px; font-weight: 700;
+  font-size: 15px; letter-spacing: 0.02em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.btn-primary {
+  background: linear-gradient(45deg, #FEDA75 0%, #FA7E1E 25%, #D62976 50%, #962FBF 75%, #4F5BD5 100%);
+  color: var(--white);
+  box-shadow: 0 10px 24px rgba(214, 41, 118, 0.32);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(214, 41, 118, 0.42); filter: brightness(1.05); }
+.btn-ghost { border: 1px solid rgba(255,255,255,0.6); color: var(--white); background: transparent; }
+.btn-ghost:hover { background: rgba(255,255,255,0.12); }
+.btn svg { width: 18px; height: 18px; }
+
+.scroll-cue {
+  position: absolute; bottom: 28px; right: 24px; z-index: 2;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  font-size: 11px; letter-spacing: 0.14em; color: rgba(255,255,255,0.75); text-transform: uppercase;
+}
+.scroll-cue::after {
+  content: ""; width: 1px; height: 26px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: scrolldown 1.8s ease-in-out infinite;
+}
+@keyframes scrolldown { 0%, 100% { transform: scaleY(1); opacity: 0.4; } 50% { transform: scaleY(1.4); opacity: 1; } }
+
+/* =========================================
+   Photo strip — 5 reasons, image thumbnails
+   ========================================= */
+.reasons { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.reason-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+.reason-item { border-radius: 12px; overflow: hidden; background: var(--white); border: 1px solid var(--line); }
+.reason-item .thumb { aspect-ratio: 1/1; overflow: hidden; }
+.reason-item .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.reason-item:hover .thumb img { transform: scale(1.08); }
+.reason-item .cap { padding: 14px 14px 16px; }
+.reason-item .cap h4 { font-size: 13.5px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.reason-item .cap p { font-size: 11.5px; color: var(--ink-soft); line-height: 1.5; }
+.reasons-foot { text-align: center; margin-top: 36px; font-size: 14px; color: var(--navy-mid); }
+.reasons-foot strong { color: var(--navy); font-weight: 700; }
+
+/* =========================================
+   Why affordable — photo right, list left
+   ========================================= */
+.why { background: var(--white); }
+.why-layout { display: grid; grid-template-columns: 1fr 0.85fr; gap: 48px; align-items: center; }
+.why-photo { border-radius: 16px; overflow: hidden; }
+.why-photo img { width: 100%; height: 100%; object-fit: cover; }
+.why-list { display: flex; flex-direction: column; }
+.why-row { display: flex; gap: 16px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.why-row:first-child { border-top: 1px solid var(--line); }
+.why-num {
+  font-family: var(--font-num); font-weight: 700; font-size: 13px; color: var(--accent);
+  width: 28px; flex-shrink: 0; padding-top: 2px;
+}
+.why-text h4 { font-size: 15.5px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.why-text p { font-size: 13.5px; color: var(--ink-soft); }
+.why-foot {
+  margin-top: 28px; padding: 24px 28px; background: var(--navy); border-radius: 14px; color: var(--white);
+}
+.why-foot p { font-size: 14px; line-height: 1.8; }
+.why-foot strong { color: var(--white); font-weight: 700; }
+
+/* =========================================
+   Process — 3 large photo+text alternating rows
+   ========================================= */
+.process { background: var(--paper); border-top: 1px solid var(--line); }
+.process-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
+  padding: 36px 0; border-bottom: 1px solid var(--line);
+}
+.process-row:last-child { border-bottom: none; }
+.process-row.reverse .process-photo { order: 2; }
+.process-row.reverse .process-text { order: 1; }
+.process-photo { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; position: relative; }
+.process-photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  position: absolute; inset: 0; opacity: 0; transition: opacity 0.35s ease;
+}
+.process-photo img.is-active { opacity: 1; }
+.process-text .step-num {
+  font-family: var(--font-num); font-size: 13px; color: var(--accent); letter-spacing: 0.1em; font-weight: 700; margin-bottom: 12px;
+}
+.process-text h4 { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+.process-text p { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 16px; }
+.compare-bar { display: flex; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); max-width: 260px; }
+.compare-bar button {
+  flex: 1; padding: 8px 0; text-align: center; font-size: 11px; letter-spacing: 0.06em; font-weight: 700;
+  border: none; cursor: pointer; transition: background 0.2s ease, color 0.2s ease;
+  font-family: var(--font-body); background: var(--paper-deep); color: var(--ink-soft);
+}
+.compare-bar button.active { background: var(--navy); color: var(--white); }
+.compare-bar button:hover:not(.active) { background: var(--paper); }
+
+/* before/after big photo block */
+.ba-block { margin-top: 8px; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
+.ba-block img { width: 100%; display: block; }
+
+/* =========================================
+   Protect (undercarriage) — dark section, photo grid
+   ========================================= */
+.protect { background: var(--navy); color: var(--white); }
+.protect .eyebrow { color: rgba(255,255,255,0.75); }
+.protect .eyebrow::before { background: rgba(255,255,255,0.75); }
+.protect .section-title { color: var(--white); }
+.protect .section-lede { color: rgba(255,255,255,0.7); }
+
+.protect-hero { border-radius: 16px; overflow: hidden; margin-bottom: 28px; aspect-ratio: 16/8; }
+.protect-hero img { width: 100%; height: 100%; object-fit: cover; }
+
+.protect-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.protect-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; overflow: hidden; }
+.protect-card .thumb { aspect-ratio: 3/2; overflow: hidden; }
+.protect-card .thumb img { width: 100%; height: 100%; object-fit: cover; }
+.protect-card .cap { padding: 18px 20px; }
+.protect-card h4 { font-size: 14.5px; font-weight: 700; margin-bottom: 8px; color: var(--white); }
+.protect-card p { font-size: 12.5px; color: rgba(255,255,255,0.65); }
+
+.product-strip { margin-top: 28px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.product-pill {
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 100px; padding: 10px 20px; font-size: 12.5px; color: rgba(255,255,255,0.85);
+  white-space: nowrap;
+}
+.product-pill strong { color: var(--white); font-weight: 700; }
+
+.shelf-grid { margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.shelf-item { border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.14); aspect-ratio: 4/3; }
+.shelf-item img { width: 100%; height: 100%; object-fit: cover; }
+
+/* =========================================
+   Support — photo banner strip
+   ========================================= */
+.support { background: var(--white); border-top: 1px solid var(--line); }
+.support-photo { border-radius: 16px; overflow: hidden; margin-bottom: 36px; aspect-ratio: 16/7; }
+.support-photo img { width: 100%; height: 100%; object-fit: cover; }
+.support-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.support-card { text-align: center; }
+.support-card .badge {
+  width: 48px; height: 48px; border-radius: 50%; background: var(--navy);
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;
+}
+.support-card .badge svg { width: 22px; height: 22px; stroke: var(--white); fill: none; stroke-width: 1.8; }
+.support-card h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.support-card p { font-size: 12px; color: var(--ink-soft); line-height: 1.6; }
+.support-banner { margin-top: 40px; text-align: center; padding: 28px; border-radius: 14px; background: var(--paper); border: 1px solid var(--line); }
+.support-banner p { font-family: var(--font-display); font-size: 16px; color: var(--navy); line-height: 1.9; }
+
+/* =========================================
+   Pricing
+   ========================================= */
+.pricing { background: var(--paper); border-top: 1px solid var(--line); }
+.tab-nav { display: flex; gap: 8px; margin-bottom: 36px; flex-wrap: wrap; }
+.tab-btn {
+  font-family: var(--font-body); font-size: 14px; font-weight: 600;
+  padding: 12px 22px; border-radius: 100px; border: 1px solid var(--line);
+  background: var(--white); color: var(--ink-soft); cursor: pointer; transition: all 0.2s ease;
+}
+.tab-btn:hover { color: var(--navy); border-color: var(--navy-soft); }
+.tab-btn.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; animation: fadein 0.35s ease; }
+@keyframes fadein { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+.price-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--line); margin-bottom: 22px; }
+table.price-table { width: 100%; border-collapse: collapse; min-width: 560px; font-size: 13.5px; background: var(--white); }
+table.price-table caption {
+  text-align: left; font-family: var(--font-display); font-weight: 700; font-size: 15px;
+  color: var(--navy); padding: 16px 20px 12px; background: var(--paper-deep);
+}
+table.price-table th, table.price-table td { padding: 13px 18px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+table.price-table th:first-child, table.price-table td:first-child { text-align: left; white-space: normal; color: var(--navy); font-weight: 600; }
+table.price-table thead th { background: var(--paper-deep); color: var(--ink-soft); font-weight: 600; font-size: 12px; letter-spacing: 0.03em; }
+table.price-table tbody tr:last-child td { border-bottom: none; }
+table.price-table tbody tr:hover td { background: rgba(11, 30, 61, 0.025); }
+table.price-table td.price { font-family: var(--font-num); font-weight: 700; color: var(--navy-soft); }
+table.price-table tbody tr.total td { background: var(--paper-deep); font-weight: 700; color: var(--navy); }
+table.price-table tbody tr.total td.price { font-size: 16px; color: var(--navy); }
+
+.price-note { font-size: 12.5px; color: var(--ink-soft); display: flex; align-items: flex-start; gap: 8px; }
+.price-note::before { content: "※"; color: var(--accent); }
+
+.free-service-box { margin-top: 28px; background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: 22px 26px; }
+.free-service-box h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.free-service-box h4::before { content: "✓"; color: var(--navy-soft); font-weight: 800; }
+.free-service-box ul { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 18px; }
+.free-service-box li { font-size: 13px; color: var(--ink-soft); padding-left: 14px; position: relative; }
+.free-service-box li::before { content: "—"; position: absolute; left: 0; color: var(--navy-soft); }
+
+/* =========================================
+   Gallery (shop)
+   ========================================= */
+.gallery { background: var(--white); border-top: 1px solid var(--line); }
+.gallery-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 20px; }
+.gallery-item { position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
+.gallery-item:hover img { transform: scale(1.04); }
+.gallery-item .cap {
+  position: absolute; bottom: 0; left: 0; right: 0; padding: 18px 20px;
+  background: linear-gradient(to top, rgba(11,30,61,0.85), transparent); font-size: 13px; color: var(--white); font-weight: 600;
+}
+.gallery-col { display: grid; grid-template-rows: 1fr 1fr; gap: 20px; }
+
+/* =========================================
+   Final CTA
+   ========================================= */
+.final-cta { position: relative; text-align: center; padding: 110px 0; color: var(--white); overflow: hidden; }
+.final-cta-bg { position: absolute; inset: 0; z-index: 0; }
+.final-cta-bg img { width: 100%; height: 100%; object-fit: cover; }
+.final-cta-bg::after { content: ""; position: absolute; inset: 0; background: rgba(11,30,61,0.86); }
+.final-cta .wrap { position: relative; z-index: 2; }
+.final-cta .eyebrow { justify-content: center; color: rgba(255,255,255,0.8); }
+.final-cta .eyebrow::before { display: none; }
+.final-cta h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(28px, 5vw, 42px); margin-bottom: 18px; line-height: 1.5; color: var(--white); }
+.final-cta p { color: rgba(255,255,255,0.75); max-width: 480px; margin: 0 auto 38px; font-size: 15px; }
+.final-cta .btn-primary {
+  font-family: var(--font-display); font-weight: 600; font-size: 16px;
+  letter-spacing: 0.04em; padding: 20px 38px; line-height: 1.5;
+  max-width: 520px; text-align: center; white-space: normal;
+}
+.final-cta .btn-primary svg { flex-shrink: 0; }
+.final-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+/* =========================================
+   Footer
+   ========================================= */
+footer { background: var(--white); border-top: 1px solid var(--line); padding: 40px 0; }
+.footer-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-logo { font-family: var(--font-display); font-weight: 700; color: var(--navy); }
+.footer-logo span { color: var(--accent); }
+.footer-meta { font-size: 12.5px; color: var(--ink-soft); }
+
+/* =========================================
+   Reveal on scroll
+   ========================================= */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* =========================================
+   Responsive
+   ========================================= */
+@media (max-width: 980px) {
+  .reason-grid { grid-template-columns: repeat(3, 1fr); }
+  .why-layout { grid-template-columns: 1fr; }
+  .why-photo { aspect-ratio: 16/9; }
+  .process-row { grid-template-columns: 1fr; gap: 20px; }
+  .process-row.reverse .process-photo { order: 1; }
+  .process-row.reverse .process-text { order: 2; }
+  .protect-grid { grid-template-columns: 1fr; }
+  .support-grid { grid-template-columns: repeat(3, 1fr); }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-col { grid-template-rows: 1fr 1fr; height: 420px; }
+  .free-service-box ul { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  section { padding: 56px 0; }
+  .hero { min-height: 92vh; }
+  .reason-grid { grid-template-columns: repeat(2, 1fr); }
+  .support-grid { grid-template-columns: repeat(2, 1fr); }
+  .free-service-box ul { grid-template-columns: 1fr; }
+  .header-cta { padding: 7px 14px; font-size: 12px; gap: 6px; }
+  .header-cta span.full { display: none; }
+  .header-cta span.short { display: inline; }
+  .logo { font-size: 16px; }
+  .hero-title { font-size: clamp(30px, 8vw, 44px); }
+  .protect-hero { aspect-ratio: 4/3; }
+  .support-photo { aspect-ratio: 4/3; }
+  .shelf-grid { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="logo">
+      <span class="logo-name">Car Shop <span class="nny">NNY</span></span>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg">
+    <img src="images/lot-exterior.jpg" alt="Car Shop NNYの自宅ガレージと展示車両">
+  </div>
+  <div class="wrap">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Car Shop NNY</div>
+      <h1 class="hero-title">いい車を、<br>もっと安心できる<br>価格で。</h1>
+      <div class="hero-rule"></div>
+      <div class="hero-tags">
+        <span>中古車販売・車検・整備・コーティング</span>
+        <span>地域密着だからできる価格とサービス</span>
+        <span>購入後のサポートまでお任せください</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reasons">
+  <div class="wrap">
+    <div class="eyebrow reveal">Why Chosen</div>
+    <h2 class="section-title reveal">Car Shop NNYが選ばれる理由</h2>
+    <p class="section-lede reveal">展示車両すべてに、手間を惜しみません。</p>
+    <div class="reason-grid">
+      <div class="reason-item reveal">
+        <div class="thumb"><img src="images/interior-vacuum-new.jpg" alt="車内清掃の様子" loading="lazy"></div>
+        <div class="cap"><h4>車内清掃</h4><p>シートや内装の隅々まで丁寧にクリーニング。</p></div>
+      </div>
+      <div class="reason-item reveal">
+        <div class="thumb"><img src="images/iron-powder-new-sq.jpg" alt="鉄粉除去の様子" loading="lazy"></div>
+        <div class="cap"><h4>鉄粉除去</h4><p>付着した鉄粉をしっかり除去し、塗装面をリセット。</p></div>
+      </div>
+      <div class="reason-item reveal">
+        <div class="thumb"><img src="images/polishing-sq-new.jpg" alt="ボディポリッシングの様子" loading="lazy"></div>
+        <div class="cap"><h4>ボディポリッシング</h4><p>小キズやくすみを磨き上げ、本来の光沢を引き出します。</p></div>
+      </div>
+      <div class="reason-item reveal">
+        <div class="thumb"><img src="images/coating-new-sq.jpg" alt="撥水ガラスコーティングの様子" loading="lazy"></div>
+        <div class="cap"><h4>撥水ガラスコーティング</h4><p>雨の日の視界を確保し、汚れの付着も軽減します。</p></div>
+      </div>
+      <div class="reason-item reveal">
+        <div class="thumb"><img src="images/muffler.jpg" alt="マフラー防錯塗装の様子" loading="lazy"></div>
+        <div class="cap"><h4>下回り防錯施工</h4><p>サビの発生を防ぎ、愛車を長く守るための施工です。</p></div>
+      </div>
+    </div>
+    <p class="reasons-foot">見えない部分まで丁寧に仕上げ、<strong>安心してお乗りいただける一台</strong>をお届けします。</p>
+  </div>
+</section>
+
+<section class="why" id="about">
+  <div class="wrap">
+    <div class="eyebrow reveal">Why Affordable</div>
+    <h2 class="section-title reveal">価格を抑えられる理由があります</h2>
+    <p class="section-lede reveal">地域に根ざした自宅営業だからこそ、できる価格とサービスがあります。</p>
+
+    <div class="why-layout reveal">
+      <div class="why-photo">
+        <img src="images/house-cars.jpg" alt="自宅営業の駐車スペースに並ぶ展示車両" loading="lazy">
+      </div>
+      <div class="why-list">
+        <div class="why-row">
+          <div class="why-num">01</div>
+          <div class="why-text"><h4>大型店舗ではありません</h4><p>店舗維持費や人件費などのコストを抑えています。</p></div>
+        </div>
+        <div class="why-row">
+          <div class="why-num">02</div>
+          <div class="why-text"><h4>広告費を抑えています</h4><p>必要以上の広告や宣伝を行わず、コストを最小限に。</p></div>
+        </div>
+        <div class="why-row">
+          <div class="why-num">03</div>
+          <div class="why-text"><h4>展示場コストを抑えています</h4><p>広大な展示場を持たず、効率的な運営を行っています。</p></div>
+        </div>
+        <div class="why-row">
+          <div class="why-num">04</div>
+          <div class="why-text"><h4>その分を車両価格へ還元しています</h4><p>無駄なコストを省き、良い車をよりお求めやすく。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="protect">
+  <div class="wrap">
+    <div class="eyebrow reveal">Hidden But Protected</div>
+    <h2 class="section-title reveal">見えない場所こそ守る。</h2>
+    <p class="section-lede reveal">サビは車の寿命に直結します。下回り・マフラーまで丁寧に保護し、長く安心して乗るための施工を行います。</p>
+
+    <div class="protect-hero reveal">
+      <img src="images/underbody-spray-new.jpg" alt="下回り防錯スプレー施工の様子" loading="lazy">
+    </div>
+
+    <div class="protect-grid">
+      <div class="protect-card reveal">
+        <div class="thumb"><img src="images/muffler.jpg" alt="マフラー防錯塗装" loading="lazy"></div>
+        <div class="cap">
+          <h4>マフラー防錯塗装</h4>
+          <p>厚い被膜で強力に密着し、塩害やサビから愛車をしっかり保護。耐熱・耐久性に優れた塗装です。</p>
+        </div>
+      </div>
+      <div class="protect-card reveal">
+        <div class="thumb"><img src="images/caliper-new.jpg" alt="キャリパー耐熱塗装" loading="lazy"></div>
+        <div class="cap">
+          <h4>キャリパー・ローター耐熱塗装</h4>
+          <p>ブレーキ廻りの防錯と耐熱性を両立。見た目の引き締まりだけでなく機能面もカバーします。</p>
+        </div>
+      </div>
+      <div class="protect-card reveal">
+        <div class="thumb"><img src="images/product-endox-new.jpg" alt="ENDOX防錯施工剤" loading="lazy"></div>
+        <div class="cap">
+          <h4>ENDOX防錯施工</h4>
+          <p>高い防錯性能と浸透力を持ち、サビの進行をしっかり抑制。下回り全体を長期間ガードします。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-strip reveal">
+      <div class="product-pill"><strong>ENDOX</strong> 防錯施工 — 高い防錯性能と浸透力</div>
+      <div class="product-pill"><strong>スリーラスター</strong> — 塩害対策用長期防錯剤</div>
+      <div class="product-pill"><strong>WAKO'S</strong> ガラス系コーティング剤</div>
+    </div>
+
+    <div class="shelf-grid reveal">
+      <div class="shelf-item">
+        <img src="images/shelf-coating.jpg" alt="店内のガラス系コーティング剤の陳列" loading="lazy">
+      </div>
+      <div class="shelf-item">
+        <img src="images/shelf-rustproof.jpg" alt="店内の防錯施工剤の陳列" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="support">
+  <div class="wrap">
+    <div class="eyebrow reveal">Aftercare</div>
+    <h2 class="section-title reveal">売って終わりではありません</h2>
+    <p class="section-lede reveal">地域に根ざしたお店だからこそ、購入後も安心のサポートをお約束します。</p>
+
+    <div class="support-photo reveal">
+      <img src="images/engine-bay-new.jpg" alt="購入後の整備の様子" loading="lazy">
+    </div>
+
+    <div class="support-grid">
+      <div class="support-card reveal">
+        <div class="badge"><svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 3v2h6V3M9 9h6M9 13h6M9 17h4"/></svg></div>
+        <h4>購入後の車検</h4>
+        <p>法定点検から車検までしっかりサポートします。</p>
+      </div>
+      <div class="support-card reveal">
+        <div class="badge"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 11-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 011.4-8.4z"/></svg></div>
+        <h4>整備</h4>
+        <p>オイル交換や消耗品の交換など日常のメンテナンスもお任せください。</p>
+      </div>
+      <div class="support-card reveal">
+        <div class="badge"><svg viewBox="0 0 24 24"><path d="M12 3c4 4 7 7.5 7 11a7 7 0 01-14 0c0-3.5 3-7 7-11z"/></svg></div>
+        <h4>コーティング</h4>
+        <p>ボディの美しさを守る各種コーティングを施工します。</p>
+      </div>
+      <div class="support-card reveal">
+        <div class="badge"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z"/></svg></div>
+        <h4>防錯施工</h4>
+        <p>下回りやマフラーの防錯施工でサビから愛車を守ります。</p>
+      </div>
+      <div class="support-card reveal">
+        <div class="badge"><svg viewBox="0 0 24 24"><path d="M20 8.5c0 4-8 10.5-8 10.5S4 12.5 4 8.5A4 4 0 0112 6a4 4 0 018 2.5z"/></svg></div>
+        <h4>長く乗るためのサポート</h4>
+        <p>お客様のカーライフに寄り添い、長く安心して乗れるようサポートします。</p>
+      </div>
+    </div>
+
+    <div class="support-banner reveal">
+      <p>地域に根ざしたお店だからこそ、<br>購入後も安心のサポートをお約束します。</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="shop">
+  <div class="wrap">
+    <div class="eyebrow reveal">At The Shop</div>
+    <h2 class="section-title reveal">店内のようす</h2>
+    <p class="section-lede reveal">商談スペースから展示ロットまで。お気軽にお越しください。</p>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item">
+        <img src="images/waiting-room.jpg" alt="Car Shop NNYの商談スペース" loading="lazy">
+        <div class="cap">商談スペース</div>
+      </div>
+      <div class="gallery-col">
+        <div class="gallery-item">
+          <img src="images/car-hero.jpg" alt="Car Shop NNYの展示車両、磨き上げられた黒いセダン" loading="lazy">
+          <div class="cap">展示車両 — 鉄粉除去・コーティング済み</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/ratchet-hands-new.jpg" alt="整備の様子" loading="lazy">
+          <div class="cap">整備風景</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="final-cta-bg"><img src="images/hood-polish.jpg" alt="ボンネット磨き上げの様子" loading="lazy"></div>
+  <div class="wrap">
+    <div class="eyebrow reveal">Get In Touch</div>
+    <h2 class="reveal">在庫も料金も、<br>まずはInstagramで。</h2>
+    <p class="reveal">最新の展示車両、施工事例、キャンペーン情報はInstagramで随時更新しています。気になる1台があれば、お気軽にDMください。</p>
+    <div class="final-actions reveal">
+      <a href="https://www.instagram.com/yuichi.t.n/?utm_source=ig_web_button_share_sheet" class="btn btn-primary" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        問い合わせ・料金・販売中の車情報はInstagramから
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <div class="footer-logo">Car Shop <span>NNY</span></div>
+    <div class="footer-meta">© Car Shop NNY — 中古車販売・車検・整備・コーティング（札幌）</div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => io.observe(el));
+</script>
+
+
+</body>
+</html>
